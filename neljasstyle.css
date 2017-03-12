@@ -1,0 +1,63 @@
+valimine {
+	height:100px;
+	width:100px;
+	position:fixed;
+	top: 200px;
+	left:200px;
+	}
+body {
+	background-color: #0A24A9;
+	}
+.sisemine {
+	border-radius: 50%;
+	position: absolute;
+	}
+.sisemine:nth-child(1) {
+	height:100%;
+	width:100%;
+	background-color: white;
+	border: 1px solid #0A24A9;
+	left:0%;
+	top: 0%;
+	}
+.sisemine:nth-child(2) {
+	height:80%;
+	width:80%;
+	background-color: red;
+	border: 1px solid #0A24A9;
+	left: 10%;
+	top: 10%;
+	}
+.sisemine:nth-child(3) {
+	height:60%;
+	width:60%;
+	background-color: white;
+	border: 1px solid #0A24A9;
+	left:20%;
+	top: 20%;
+	}
+
+.sisemine:nth-child(4) {
+	height:40%;
+	width:40%;
+	background-color: red;
+	border: 1px solid #0A24A9;
+	left:30%;
+	top: 30%;
+	}
+
+.sisemine:nth-child(5) {
+	height:20%;
+	width:20%;
+	background-color: white;
+	border: 1px solid #0A24A9;
+	left:40%;
+	top: 40%;
+	}
+
+img {
+	width: 100%;
+	position:fixed;
+	bottom: 0;
+	left: 0;
+}
