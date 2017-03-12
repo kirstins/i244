@@ -1,0 +1,26 @@
+.bead {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	border-radius: 50%;
+	box-shadow: 0px -11px 23px -3px black inset;
+	float: right;
+	margin-top: -25px;
+}
+
+.row {
+clear: both;
+border: solid gray;
+margin-top: 50px; 
+}
+
+#raam {
+	border-style: outset;
+	border-width: 10px;
+	border-color: #A0522D;
+	padding-bottom: 50px;
+}
+
+.teine {
+	float: left;
+}
