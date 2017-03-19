@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Viies kodutöö</title>
+	<link rel="stylesheet" type="text/css" href="viiesstyle.css">
+	<script>
+	window.onload = function() {
+		var valimine = document.getElementById ("valimine");
+
+		valimine.onclick = function () {
+			var a = Math.random()*200+"px";
+			var b = Math.random()*300+"px";
+			valimine.style.top = a;
+			valimine.style.left = b;		
+	}
+}
+	</script>
+</head>
+<body>
+	<img src="duck.png" alt="taustapilt" >	
+
+	<div id="valimine">
+		<div class="sisemine">
+		</div>
+		<div class="sisemine">
+		</div>
+		<div class="sisemine">
+		</div>
+		<div class="sisemine">
+		</div>
+		<div class="sisemine">
+		</div>
+	</div>
+
+</body>
+</html>
