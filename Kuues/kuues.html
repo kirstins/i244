@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kodune Ülesanne</title>
+	<style type="text/css">
+	.active { background: skyblue; padding: 10px;}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("li").first().addClass("active");
+	
+	$("#next").click(function(){
+		var klassigakoos = $("li.active");
+		if (klassigakoos.is(":last-child")){
+			$("li").last().removeClass("active");
+			klassigakoos=$("li").first().addClass("active");
+			}
+		else {
+		klassigakoos=$(klassigakoos).next().addClass("active");
+		$(klassigakoos).prev().removeClass("active");
+		}	
+	});
+	
+	$("#prev").click(function(){
+		var klassigakoos = $("li.active");
+		if (klassigakoos.is(":first-child")){
+			$("li").first().removeClass("active");
+			klassigakoos=$("li").last().addClass("active");
+			}
+		else {
+		klassigakoos=$(klassigakoos).prev().addClass("active");
+		$(klassigakoos).next().removeClass("active");
+		}	
+	});
+	
+	});
+	</script>
+</head>
+<body>
+<button id="next">edasi</button>
+<button id="prev">tagasi</button>
+
+<ul>
+<li>esimene</li>
+<li>teine</li>
+<li>kolmas</li>
+<li>neljas</li>
+</ul>
+
+</body>
+</html>
