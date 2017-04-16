@@ -1,0 +1,13 @@
+<h3>Valiku tulemus</h3>
+	<?php 
+	$valitud="";
+	if (isset($_POST["pilt"]) &&!empty($_POST["pilt"])) {
+	$valitud=$_POST["pilt"];
+	$uusarray=$pildid[$valitud-1];
+	echo "Valisid selle pildi:<br/>";
+	echo "<img src=\"".$uusarray["source"]."\" alt=\"".$uusarray"alt"]."\"/>";
+	
+	}  else {
+		echo "Vali palun uuesti";}
+	?>
+
