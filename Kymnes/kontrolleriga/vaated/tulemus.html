@@ -1,0 +1,16 @@
+<?php if ((!isset($_SESSION['voted_for']))):	?>
+	<h3>Oled teinud oma valiku</h3>
+	<p>Valisid selle ilusa pildi: <br/>
+		<img src="<?php echo $pildid[$id]['src'];?>" alt="väljavalitu"/></p>
+		<?php $_SESSION['voted_for'] = $id;?>
+<?php elseif (isset($_SESSION['voted_for'])): ?>
+	<p>Hääletasid juba pildi nr <?= $_SESSION['voted_for']?> poolt</p>
+<?php else: ?>
+	<?php if (empty($_POST['pilt'])): ?>
+		<h3>Pilti pole veel valitud. Hääletada saad <a href="?page=vote">siin</a>.</h3>
+	<?php else: ?>
+		<h3>Sellist pilti ei eksisteeri, palun tee uus <a href="?page=vote">valik</a>.</h3>
+	<?php endif; ?>
+<?php endif; ?>
+
+<p><a href="sessioon.php">Lõpeta sessioon!</a></p>
