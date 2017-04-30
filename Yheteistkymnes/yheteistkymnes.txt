@@ -1,0 +1,26 @@
+CREATE TABLE ksaluvee_loomaaed (
+id integer PRIMARY KEY auto_increment,
+nimi varchar(100),
+vanus integer,
+liik varchar (50),
+puur integer
+);
+
+INSERT INTO ksaluvee_loomaaed (nimi, vanus, liik, puur) VALUES 
+('Alfred', 3, 'gorilla', 1),
+('Mati', 10, 'karu', 2),
+('Albert', 5, 'gorilla', 1),
+('John', 14, 'ninasarvik', 3),
+('Kati', 8, 'karu', 4);
+
+* Hankida kõigi mingis ühes kindlas puuris elavate loomade nimi ja puuri number
+SELECT nimi, puur FROM ksaluvee_loomaaed WHERE puur=1;
+
+* Hankida vanima ja noorima looma vanused
+SELECT max(vanus), min(vanus) FROM ksaluvee_loomaaed;
+
+* Hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count)
+SELECT count(*) as elanikud, puur FROM ksaluvee_loomaaed GROUP BY puur;
+
+* Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra
+UPDATE ksaluvee_loomaaed SET vanus=vanus+1;
