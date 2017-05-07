@@ -1,0 +1,16 @@
+<?php if (!empty($puurid)):
+	foreach($puurid as $p=>$puur):?>
+
+<div>
+<p> Number <?php echo $p;?> puuris elavad:</p>
+<?php foreach($puur as $l=>$loom): ?>
+
+<img src="<?php echo $loom['liik'];?>" alt="<?php echo $loom['nimi'];?>">
+
+<?php endforeach; ?>
+</div>
+
+<?php endforeach;
+endif;
+?>
+
