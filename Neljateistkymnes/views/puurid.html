@@ -1,0 +1,14 @@
+<?php if (!empty($puurid)):?>
+	<?php foreach($puurid as $pid=>$puur): ?>
+		<div class="puur">
+			<h5>Puur <?php echo $pid; ?></h5>
+			<?php foreach($puur as $lid=>$loom): ?>
+				<?php if ($_SESSION['role]=="admin"): ?>
+			<a href="?page=muuda&id=<?php echo $loomad['id'];?>"><img src="<?php echo $loomad['liik'];?>" alt="<?php echo $loomad['nimi'];?>"></a>
+			
+		<?php else: ?>
+			<img src="<?php echo $loomad['liik'];?>" alt="<?php echo $loomad['nimi'];?>">
+		<?php endif; ?>
+		</div>
+	<?php endforeach; ?>
+<?php endif;?>
