@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Kulud ja tulud</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="static/javasc.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">
+	<ul id="menu">
+		<li><img src="pics/pig.png" alt="logo" width=60px></li>
+		<li><a href="?">Pealeht</a></li>
+		<?php if(isset($_SESSION['user'])): ?>		
+			<li><a href="?mode=overview">Ülevaade</a></li>
+			<li><a href="?mode=history">Ajalugu</a>
+				<ul class="dropdown">
+				<li><a href="?mode=costhistory">Kulud</a></li>
+				<li><a href="?mode=incomehistory">Tulud</a></li>
+				</ul>
+			</li>
+			<li><a href="?add">Lisa</a>
+			<ul class="dropdown">
+				<li><a href="?mode=addcost">Kulud</a></li>
+				<li><a href="?mode=addincome">Tulud</a></li>
+				</ul>
+			</li>
+			<li><a href="?mode=logout">Logi välja</a></li>	
+		<?php else: ?>		
+			<li><a href="?mode=login"> Logi sisse </a></li>
+			<li><a href="?mode=register"> Registreeri </a></li>		
+		<?php endif; ?>				
+	</ul>
+	<div id="content">

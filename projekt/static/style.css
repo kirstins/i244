@@ -1,0 +1,54 @@
+body {
+	margin: 0px;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+#wrap {
+	width: 1000px;
+    background: white;
+    margin: auto;
+    overflow: auto;
+}
+
+#menu {
+    list-style: none;
+    text-align: center;
+    background: white;
+  
+
+}
+#menu li, #menu a, #menu img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#menu img{
+	background: #24656f;
+}
+
+#menu a {
+    padding:10px;
+    color: #24656f;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#menu a:hover {
+    background: #24656f;
+    color: white;
+}
+
+#menu .dropdown{
+        width: 100%; 
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        left: 0;
+    }
+
+#menu  li:hover .dropdown{
+        display: block;	
+    }
+
+#menu  li:hover .dropdown li{
+        display: block;	
+    }

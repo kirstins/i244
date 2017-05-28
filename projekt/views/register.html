@@ -1,0 +1,14 @@
+<h1> Registreerimine </h1>
+<div id="register">
+<form action="?mode=register" method="POST" >
+	<input type="text" placeholder="kasutajanimi" name="user"/><br/>
+	<input type="password" placeholder="parool" name="pass"/><br/>
+	<input type="password" placeholder="parool uuesti" name="pass2" /><br/>
+	<input type="submit" value="Registreeru!"/>
+</form>
+
+<?php if(!empty($errors)):
+	foreach($errors as $e):?>
+		<p style="color:red"><?php echo $e; ?></p>
+<?php	endforeach;
+endif;?>

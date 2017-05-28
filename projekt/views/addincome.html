@@ -1,0 +1,21 @@
+
+<div id="addincome">
+     <form action="?mode=addincome" method="POST" >
+       Sissetuleku kuupäev(YYYY-MM-DD):
+        <input type="date" name="datec" value = "<?php if (!empty($_POST['datec'])) echo htmlspecialchars($_POST['datec']);?>"/><br/><br>
+        Vali siit, millega kulutus seotud on:
+         <select name = "cat">
+            <?php foreach($categories as $c):?>
+            <option value="<?php echo $c; ?>"<?php if(!empty($_POST['cat']) && $_POST['cat']== $c) echo 'selected = "selected"';?>><?php echo $c; ?></option>
+            <?php endforeach;?>
+        </select><br><br>
+       Sissetuleku summa:
+         <input type="number" name="sum" value = "<?php if (!empty($_POST['sum'])) echo htmlspecialchars($_POST['sum']);?>"/><br/><br>
+        <input type="submit" value="Lisa sissetulek!"/><br><br>
+    </form>
+    <?php if (isset($errors)):?>
+    <?php foreach($errors as $error):?>
+    <div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+    <?php endforeach;?>
+    <?php endif;?>
+</div>
