@@ -51,6 +51,39 @@ function logout ()
     header ( "Location: ?" );
 }
 
+function view_costs(){
+    global $connection;
+    if (empty($_SESSION['user'])) {
+        header("Location: ?mode=login");
+    }
+    
+    $costs = array();
+    $uid = mysqli_real_escape_string($connection, $_SESSION['user']['id']);
+    $sql = "SELECT * FROM ksaluvee_kulud WHERE userid = '$uid' ORDER BY costdate DESC";
+    $result_costs = mysqli_query($connection, $sql) or die ("Andmeid ei õnnestunud andmebaasist saada!");
+    while ($result_cost = mysqli_fetch_assoc($result_costs)){
+        $costs[] = $result_cost;
+    }
+    include_once('views/costhistory.html');
+}
+
+function view_income(){
+    global $connection;
+    if (empty($_SESSION['user'])) {
+        header("Location: ?mode=login");
+    }
+    
+    $incomes = array();
+    $uid = mysqli_real_escape_string($connection, $_SESSION['user']['id']);
+    $sql = "SELECT * FROM ksaluvee_tulud WHERE userid = '$uid' ORDER BY incomedate DESC";
+    $result_incomes = mysqli_query($connection, $sql) or die ("Andmeid ei õnnestunud andmebaasist saada!");
+    while ($result_income = mysqli_fetch_assoc($result_incomes)){
+        $incomes[] = $result_income;
+    }
+    include_once('views/incomehistory.html');
+}
+
+
 function addcost(){
     global $connection;
     global $categories;
@@ -176,6 +209,9 @@ function register(){
 	include_once('views/register.html');
 	
 }
+
+
+
 
 
 

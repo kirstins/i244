@@ -1,0 +1,21 @@
+<div class = 'history'>
+    <?php if (!empty($costs)): ?>
+    <table class = "tabel">
+        <thead>
+        <tr>
+            <th class = "col">Kuupäev</th><th>Kuluartikkel</th><th>Summa</th>
+        </tr>
+        </thead>
+
+        <?php foreach ($costs as $cost): ?>
+            <tbody>
+            <tr>
+                <td ><?php echo htmlspecialchars($cost['costdate']); ?></td>
+                <td ><?php echo htmlspecialchars($cost['categorie']); ?></td>
+                <td ><?php echo htmlspecialchars($cost['sum']); ?></td>
+            </tr>
+            </tbody>
+            <?php endforeach; ?>
+    </table>
+    <?php endif; ?>
+</div>

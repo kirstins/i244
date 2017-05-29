@@ -22,13 +22,13 @@ switch($mode){
         addcost();
         break;
     case "addincome";
-       addincome ();
+       addincome();
        break;
     case "costhistory":
-       // view_costs();
+       view_costs();
         break;
     case "incomehistory":
-      //  view_income();
+      view_income();
         break;
     case "overview":
       //  view_summary();
