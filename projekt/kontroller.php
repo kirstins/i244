@@ -30,11 +30,8 @@ switch($mode){
     case "incomehistory":
       view_income();
         break;
-    case "overview":
-      //  view_summary();
-        break;
     default:
-       // include("views/main.html");
-        break;
+       include_once('views/main.html');
+    break;
 }
 require_once('views/foot.html');

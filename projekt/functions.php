@@ -51,6 +51,7 @@ function logout ()
     header ( "Location: ?" );
 }
 
+
 function view_costs(){
     global $connection;
     if (empty($_SESSION['user'])) {
@@ -207,13 +208,5 @@ function register(){
 	}
 
 	include_once('views/register.html');
-	
 }
-
-
-
-
-
-
-
 ?>

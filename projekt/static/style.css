@@ -4,7 +4,7 @@ body {
 }
 
 #wrap {
-	width: 1000px;
+	width: 800px;
     background: white;
     margin: auto;
     overflow: auto;
@@ -39,7 +39,6 @@ body {
 
 #menu .dropdown{
         width: 100%; 
-        background: #f2f2f2;
         display: none;
         position: absolute;
         left: 0;
@@ -52,3 +51,55 @@ body {
 #menu  li:hover .dropdown li{
         display: block;	
     }
+
+#changing {
+    max-width: 800px;
+    text-align: center;
+    font-size: 200%;
+    border-style: solid;
+    border-color: #24656f;
+    color:black;
+    position: absolute;
+   top: 70%;
+
+}
+
+.pealkiri{
+    max-width: 800px;
+    text-align: center;
+    color: #24656f;
+    position:absolute;
+    top: 25%;
+    margin:auto;
+}
+
+#button1{
+    background-color: black;
+    color: white;
+    font-size: 100%; 
+    position: absolute;
+    top:40%;
+    margin:auto;
+}
+
+#button2{
+    background-color: black;
+    color: white;
+    font-size: 100%; 
+    position: absolute;
+    top:50%;
+    margin:auto;
+}
+
+table, td, th {
+    border: 2px solid black;
+}
+
+table  {
+    width: 100%;
+}
+
+.col {
+    background-color: #24656f;
+    color: white;
+}
