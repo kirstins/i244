@@ -74,7 +74,9 @@ function addcost(){
             $date=mysqli_real_escape_string($connection ,$_POST['datec']);
             $kategooria=mysqli_real_escape_string($connection,$_POST['cat']);
             $summa=mysqli_real_escape_string($connection,$_POST['sum']);
-            $sql="INSERT INTO ksaluvee_kulud (costdate, categorie, sum) VALUES ('$date', '$kategooria', '$summa')";
+			$uid=mysqli_real_escape_string($connection, $_SESSION['user']['id']);
+
+            $sql="INSERT INTO ksaluvee_kulud (userid, costdate, categorie, sum) VALUES ($uid, '$date', '$kategooria', $summa)";
             $result = mysqli_query($connection, $sql);
             if ($result){
                 $id = mysqli_insert_id($connection);
@@ -113,11 +115,13 @@ function addincome(){
             $date=mysqli_real_escape_string($connection ,$_POST['datec']);
             $kategooria=mysqli_real_escape_string($connection,$_POST['cat']);
             $summa=mysqli_real_escape_string($connection,$_POST['sum']);
-            $sql="INSERT INTO ksaluvee_kulud (costdate, categorie, sum) VALUES ('$date', '$kategooria', '$summa')";
+            $uid=mysqli_real_escape_string($connection, $_SESSION['user']['id']);
+
+            $sql="INSERT INTO ksaluvee_tulud (userid, incomedate, categorie, sum) VALUES ($uid, '$date', '$kategooria', $summa)";
             $result = mysqli_query($connection, $sql);
             if ($result){
                 $id = mysqli_insert_id($connection);
-                $_SESSION['message']="Kulu lisatud!";
+                $_SESSION['message']="Tulu lisatud!";
                 header("Location: ?");
                 exit(0);
             } else {
@@ -172,6 +176,7 @@ function register(){
 	include_once('views/register.html');
 	
 }
+
 
 
 
